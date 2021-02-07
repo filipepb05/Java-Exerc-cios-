@@ -4,7 +4,6 @@ public class NotaAluno {
 
     private double nota;
 
-    private boolean aprovado;
 
     public NotaAluno (String nome, double nota) {
         this.nome = nome;
@@ -13,14 +12,12 @@ public class NotaAluno {
         System.out.println("Aluno " + nome + " com nota " + nota + " foi instanciado.");
     }
 
-    public void aprovado() {
+    public void situacao() {
         if (nota >= 7) {
-            this.aprovado = true;
             System.out.println("O aluno " + nome + " com nota " + nota + " está aprovado!");
         }
         else{
-            this.aprovado = false;
-        System.out.println("O aluno " + nome + " com nota " + nota + " está reprovado!");
+            System.out.println("O aluno " + nome + " com nota " + nota + " está reprovado!");
         }
 
     }

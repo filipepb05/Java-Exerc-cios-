@@ -18,8 +18,8 @@ public class Aplicação {
 
         System.out.println(resultadoMenorQue);
 
-        NotaAluno aluno = new NotaAluno("João",8.5);
-        aluno.aprovado();
+        NotaAluno aluno = new NotaAluno("João",9.5);
+        aluno.situacao();
 
     }
 
