@@ -15,18 +15,11 @@ public class Diretor {
         return nome;
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public int getNumeroFilme() {
-        return numeroFilme;
-    }
 
     public String informacoesDiretor(){
-        System.out.println(getNome());
-        System.out.println("Idade: " + getIdade());
-        System.out.println("Numero de filmes dirigidos " + getNumeroFilme());
+        System.out.println(this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Numero de filmes dirigidos " + this.numeroFilme);
         return null;
     }
 }
