@@ -1,29 +1,25 @@
-public class Diretor {
+public class Ator {
 
     private String nome;
     private int idade;
+    private int oscar;
     private Genero genero;
-    private int numeroFilme;
 
 
-    public Diretor(String nome, int idade, Genero genero, int numeroFilme) {
+    public Ator(String nome, int idade, Genero genero, int oscar) {
         this.nome = nome;
         this.idade = idade;
         this.genero = genero;
-        this.numeroFilme = numeroFilme;
+        this.oscar = oscar;
     }
-
-    public String getNome() {
-        return nome;
-    }
-
 
     public String informacoes(){
         System.out.println(this.nome);
         System.out.println("Idade: " + this.idade);
         System.out.println("Genero: " + this.genero.getDescricao());
-        System.out.println("Numero de filmes dirigidos: " + this.numeroFilme);
+        System.out.println("Numero de oscars: " + this.oscar);
         return null;
     }
-}
 
+
+}
