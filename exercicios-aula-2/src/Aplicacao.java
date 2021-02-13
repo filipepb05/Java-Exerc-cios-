@@ -7,8 +7,9 @@ public class Aplicacao {
         Filme resgate = new Filme ("O Resgate do soldado Ryan", "Guerra - WW2", 172, 2001, spielberg);
         Ator hanks = new Ator ("Tom Hanks", 55, Genero.MASCULINO, 10);
 
-        batman.reproduzir();
-        resgate.reproduzir();
+        //batman.nota(8);
+        //batman.reproduzir();
+        //resgate.reproduzir();
 
         spielberg.informacoes();
         hanks.informacoes();
