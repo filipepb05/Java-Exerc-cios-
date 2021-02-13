@@ -5,7 +5,7 @@ public enum Genero {
 
     private String descricao;
 
-    Genero (String descricao){
+    Genero (String descricao){  // no enum Cargo é sempre private, sem possibilidade de alteração
         this.descricao = descricao;
     }
 

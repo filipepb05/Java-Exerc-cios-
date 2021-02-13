@@ -8,12 +8,9 @@ public class Ator extends Pessoa{
         this.oscar = oscar;
     }
 
-    public String informacoes(){
-        System.out.println(super.getNome());
-        System.out.println("Idade: " + super.getIdade());
-        System.out.println("Genero: " + super.getGenero().getDescricao());
+    public void informacoes(){
+        super.informacoes();
         System.out.println("Numero de oscars: " + this.oscar);
-        return null;
     }
 
 

@@ -7,7 +7,8 @@ public class Filme {
     private int nota;
     private Diretor diretor;
 
-    public Filme(String filme, String descricao, double duracao, int anoLancamento, Diretor batata) {
+    public Filme(String filme, String descricao, double duracao, int anoLancamento, Diretor batata, int nota) {
+        defineNota(nota);
         this.filme = filme;
         this.descricao = descricao;
         this.duracao = duracao;
@@ -15,20 +16,26 @@ public class Filme {
         this.diretor = batata;
     }
 
-    public String reproduzir(){
+    public void reproduzir(){
         System.out.println(this.filme);
         System.out.println(this.descricao);
         System.out.println("Duracao de " + this.duracao + " minutos.");
         System.out.println("Lancado em: " + this.anoLancamento);
         System.out.println("Do diretor " + this.diretor.getNome());
-        if (nota != 0) {
-            System.out.println("Nota " + this.nota);
-        }
-        return null;
+        System.out.println("Nota " + this.nota);
+
     }
 
-    public void nota (int nota){
-        this.nota = nota;
+    public String getFilme() {
+        return filme;
+    }
+
+    public void defineNota (int nota){
+        if (nota < 1 || nota > 5) {
+            this.nota = 3;
+        } else {
+            this.nota = nota;
+        }
     }
 
 

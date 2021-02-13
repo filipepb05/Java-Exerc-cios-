@@ -12,13 +12,9 @@ public class Diretor extends Pessoa {
         return super.getNome();
     }
 
-
-    public String informacoes(){
-        System.out.println(super.getNome());
-        System.out.println("Idade: " + super.getIdade());
-        System.out.println("Genero: " + super.getGenero().getDescricao());
+    public void informacoes(){
+        super.informacoes();
         System.out.println("Numero de filmes dirigidos: " + this.numeroFilme);
-        return null;
     }
 }
 

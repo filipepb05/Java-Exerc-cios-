@@ -15,11 +15,9 @@ public class Pessoa {
         return nome;
     }
 
-    public int getIdade() {
-        return idade;
-    }
-
-    public Genero getGenero() {
-        return genero;
+    public void informacoes(){
+        System.out.println(this.nome);
+        System.out.println("Idade: " + this.idade);
+        System.out.println("Genero: " + genero.getDescricao());
     }
 }
