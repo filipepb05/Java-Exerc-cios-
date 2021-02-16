@@ -5,8 +5,10 @@ public class ImoveisParaFinanciamento {
 
     private List<Imovel> imoveis;
 
+
     public ImoveisParaFinanciamento() {
         imoveis = new ArrayList<>();
+
     }
 
     /**
@@ -24,7 +26,6 @@ public class ImoveisParaFinanciamento {
         } else {
             System.out.println("Atenção, problema de registro! Imóveis com valor de R$" + imovel.getValor() + " não são aceitos no programa.\" ");
         }
-
         // se "imovel" corresponder às regras, adicioná-lo à lista "imoveis" com o seguinte código:
         //    imoveis.add(imovel);
     }
@@ -32,19 +33,19 @@ public class ImoveisParaFinanciamento {
     /**
      * Retorna opções de financiamento cujo valor do imóvel seja inferior ou igual ao valor limite que foi informado.
      */
-    public List<Imovel> buscarOpcoes(double valorLimite) {
+    public List<Imovel> buscarOpcoes (double valorLimite) {
 
-        List<Imovel> opcoes = new ArrayList<>();
+            List<Imovel> opcoes = new ArrayList<>();
 
-        // percorre a lista de imóveis
-        for (Imovel imovel : imoveis) {
-            if (imovel.getValor() <= valorLimite){
-                opcoes.add(imovel);
+            // percorre a lista de imóveis
+            for (Imovel imovel: imoveis) {
+                if (imovel.getValor() <= valorLimite) {
+                    opcoes.add(imovel);
+                }
+                // se "imovel" corresponder às regras, adicioná-lo à lista de opcoes com o seguinte código:
+                //    opcoes.add(imovel);
             }
-            // se "imovel" corresponder às regras, adicioná-lo à lista de opcoes com o seguinte código:
-            //    opcoes.add(imovel);
-        }
 
-        return opcoes;
+                return opcoes;
     }
 }

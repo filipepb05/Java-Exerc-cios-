@@ -1,4 +1,5 @@
 public enum UnidadeFederativa {
+
     RS ("Rio Grande do Sul"),
     SC ("Santa Catarina"),
     PR ("Paraná"),

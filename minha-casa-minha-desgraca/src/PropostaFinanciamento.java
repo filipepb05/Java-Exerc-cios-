@@ -29,7 +29,7 @@ public class PropostaFinanciamento {
                 (valorImovel * 0.5)){
             System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
         }else {
-            System.out.println("Esquece, parece que vc é pobre demais para ter essa casa...");
+            System.out.println("Esquece, parece que vc é pobre demais para ter esse imóvel...");
         }
     }
 }

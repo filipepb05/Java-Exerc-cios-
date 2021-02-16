@@ -12,21 +12,20 @@ public class MinhaCasaMinhaDesgraca {
         ImoveisParaFinanciamento opcoesParaFinanciamento = new ImoveisParaFinanciamento();
 
 
-
         /**
          * INÍCIO
          *
          * NÃO MODIFICAR ESTA CLASSE ANTES DESTA LINHA.
          */
 
-        opcoesParaFinanciamento.registrarImovel(new Imovel(new Endereco("Rua da Marmota",99,
-                "casa 00", "Batmão","Metrópolis", UnidadeFederativa.SP), 825000));
-        opcoesParaFinanciamento.registrarImovel(new Imovel(new Endereco("Avenida dos Crackeiros",1,
-                "", "Brasil","Brasilia", UnidadeFederativa.DF), 200000));
-        opcoesParaFinanciamento.registrarImovel(new Imovel(new Endereco("Rua da Visão",00,
-                "Vizinho da Wanda", "Centro","Westview", UnidadeFederativa.RJ), 999000));
-        opcoesParaFinanciamento.registrarImovel(new Imovel(new Endereco("Alameda sempre verde",742,
-                "", "East","Springfield", UnidadeFederativa.AC), 500000));
+        opcoesParaFinanciamento.registrarImovel(new Apartamento(new Endereco("Rua da Marmota",99,
+                "apartamento 303", "Batmão","Metrópolis", UnidadeFederativa.SP), 825000, 3));
+        opcoesParaFinanciamento.registrarImovel(new Apartamento(new Endereco("Avenida dos Crackeiros",1,
+                "apartamento 1001", "Brasil","Brasilia", UnidadeFederativa.DF),200000, 10));
+        opcoesParaFinanciamento.registrarImovel(new Casa(new Endereco("Rua da Visão",00,
+                "Vizinho da Wanda", "Centro","Westview", UnidadeFederativa.RJ), 999000, false));
+        opcoesParaFinanciamento.registrarImovel(new Casa(new Endereco("Alameda sempre verde",742,
+                "", "East","Springfield", UnidadeFederativa.AC), 500000, true));
 
         /**
          * FIM
