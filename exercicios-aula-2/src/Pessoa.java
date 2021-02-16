@@ -16,8 +16,10 @@ public class Pessoa {
     }
 
     public void informacoes(){
+        String[] teste = {"teste1", "teste2"};
         System.out.println(this.nome);
         System.out.println("Idade: " + this.idade);
         System.out.println("Genero: " + genero.getDescricao());
+
     }
 }

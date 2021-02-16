@@ -25,7 +25,8 @@ public class PropostaFinanciamento {
                 System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
         }else if (uf == UnidadeFederativa.RJ && ((salario * mesesPagamento) >= (valorImovel * 0.6))){
                 System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
-        }else if ((salario * mesesPagamento) >= (valorImovel * 0.5)){
+        }else if (uf != UnidadeFederativa.SP && uf != UnidadeFederativa.RJ && (salario * mesesPagamento) >=
+                (valorImovel * 0.5)){
             System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
         }else {
             System.out.println("Esquece, parece que vc é pobre demais para ter essa casa...");
