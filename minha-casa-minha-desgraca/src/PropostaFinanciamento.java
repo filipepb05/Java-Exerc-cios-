@@ -1,14 +1,12 @@
 public class PropostaFinanciamento {
 
     private double salario;
-    private double valorImovel;
-    private UnidadeFederativa uf;
+    private Imovel imovel;
     private int mesesPagamento;
 
     public PropostaFinanciamento(Beneficiario beneficiario, Imovel imovelescolhido, int mesesPagamento) {
         this.salario = beneficiario.getSalario();
-        this.valorImovel = imovelescolhido.getValor();
-        this.uf = imovelescolhido.getEndereco().getEstado();
+        this.imovel = imovelescolhido;
         this.mesesPagamento = mesesPagamento;
     }
     /**
@@ -21,15 +19,23 @@ public class PropostaFinanciamento {
      *      o salário multiplicado pelo prazo deve ser equivalente a 65% e 60% do valor imóvel (respectivamente).
      */
     public void validarProposta() {
-        if (uf == UnidadeFederativa.SP && ((salario * mesesPagamento) >= (valorImovel * 0.65))){
-                System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
-        }else if (uf == UnidadeFederativa.RJ && ((salario * mesesPagamento) >= (valorImovel * 0.6))){
-                System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
-        }else if (uf != UnidadeFederativa.SP && uf != UnidadeFederativa.RJ && (salario * mesesPagamento) >=
-                (valorImovel * 0.5)){
-            System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
+        if (imovel.getEndereco().getEstado() == UnidadeFederativa.SP && ((salario * mesesPagamento) >= (imovel.getValor() * 0.65))){
+                imprimirPropostaAprovada();
+        }else if (imovel.getEndereco().getEstado() == UnidadeFederativa.RJ && ((salario * mesesPagamento) >= (imovel.getValor() * 0.6))){
+                imprimirPropostaAprovada();
+        }else if (imovel.getEndereco().getEstado()  != UnidadeFederativa.SP && imovel.getEndereco().getEstado()  != UnidadeFederativa.RJ && (salario * mesesPagamento) >=
+                (imovel.getValor() * 0.5)){
+                imprimirPropostaAprovada();
         }else {
-            System.out.println("Esquece, parece que vc é pobre demais para ter esse imóvel...");
+            imprimirPropostaNegada();
         }
+    }
+
+    private void imprimirPropostaAprovada () {
+        System.out.println("Aprovado! Essa bomba agora é sua! Parabéns?");
+    }
+
+    private void imprimirPropostaNegada () {
+        System.out.println("Esquece, parece que vc é pobre demais para ter esse imóvel...");
     }
 }
