@@ -1,3 +1,5 @@
+import java.util.List;
+
 public class Filme {
 
     private String filme;
@@ -5,15 +7,17 @@ public class Filme {
     private double duracao;
     private int anoLancamento;
     private int nota;
-    private Diretor diretor;
+    private Pessoa diretor;
+    private List<Pessoa> elenco;
 
-    public Filme(String filme, String descricao, double duracao, int anoLancamento, Diretor batata, int nota) {
+    public Filme(String filme, String descricao, double duracao, int anoLancamento, Pessoa batata, List<Pessoa> elenco, int nota) {
         defineNota(nota);
         this.filme = filme;
         this.descricao = descricao;
         this.duracao = duracao;
         this.anoLancamento = anoLancamento;
         this.diretor = batata;
+        this.elenco = elenco;
     }
 
     public void reproduzir(){
@@ -23,7 +27,10 @@ public class Filme {
         System.out.println("Lancado em: " + this.anoLancamento);
         System.out.println("Do diretor " + this.diretor.getNome());
         System.out.println("Nota " + this.nota);
-
+        System.out.println("\nElenco:");
+        for (Pessoa elenco : elenco){
+            elenco.informacoes();
+        }
     }
 
     public String getFilme() {

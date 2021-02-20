@@ -8,9 +8,10 @@ public class Ator extends Pessoa{
         this.oscar = oscar;
     }
 
+    @Override
     public void informacoes(){
         super.informacoes();
-        System.out.println("Numero de oscars: " + this.oscar);
+        System.out.println("Numero de oscars: " + this.oscar + "\n");
     }
 
 

@@ -1,4 +1,5 @@
 public enum Genero {
+
     MASCULINO ("Masculino"),
     FEMININO ("Feminino"),
     NAO_BINARIO ("Não Binário");
@@ -10,7 +11,6 @@ public enum Genero {
     }
 
     public String getDescricao() {
-
         return descricao;
     }
 }
