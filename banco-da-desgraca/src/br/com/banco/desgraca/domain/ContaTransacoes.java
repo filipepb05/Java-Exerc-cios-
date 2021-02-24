@@ -8,62 +8,65 @@ public abstract class ContaTransacoes {
 
     public double depositar(Double valor, Double saldo) {
 
-        return saldo = saldo + valor;
+        return saldo + valor;
     }
 
     public double sacar (Double valor, Double saldo, TipoConta tipoConta) {
         double taxa = 1;
-        if (tipoConta.equals(TipoConta.CONTA_POUPANCA)){
-            taxa = 1.02; }
+        if (tipoConta.equals(TipoConta.CONTA_POUPANCA)) {
+            taxa = 1.02;
+        }
         if ((valor * taxa) >= saldo) {
             throw new SaldoInsuficienteException("Saldo Insuficiente");
         }
-        if (tipoConta.equals(TipoConta.CONTA_CORRENTE)){
+        if (tipoConta.equals(TipoConta.CONTA_CORRENTE)) {
             if ((valor % 5) == 0) {
-                saldo = saldo - valor;
+                saldo = saldo - valor * taxa;
             } else {
                 throw new OperacaoNegada("Valor inválido. Notas apenas de R$ 5,00, R$ 10,00, R$ 20,00, R$ 50,00, " +
                         "R$ 100,00 e R$ 200,00 ");
             }
         }
-        if (tipoConta.equals(TipoConta.CONTA_DIGITAL)){
+        if (tipoConta.equals(TipoConta.CONTA_DIGITAL)) {
             if (valor >= 10) {
-                saldo = saldo - valor;
+                saldo = saldo - valor * taxa;
             } else {
                 throw new OperacaoNegada("Valor inválido. Saques apenas acima de R$10,00");
             }
         }
-        if (tipoConta.equals(TipoConta.CONTA_POUPANCA)){
+        if (tipoConta.equals(TipoConta.CONTA_POUPANCA)) {
+            if (valor < 50) {
+                throw new OperacaoNegada("Valor inválido. Saques apenas acima de R$50,00");
+            }
             saldo = saldo - valor * taxa;
-        }
 
+        }
         return saldo;
     }
 
-    public double transferir (Double valor, Double saldo, TipoConta tipoConta, InstituicaoBancaria bancoRemetente,
-                              ContaBancaria contaDestinatario){
-        double taxa = 1;
-        boolean mesmoBanco = bancoRemetente.getDescricao().equals(contaDestinatario.getInstituicaoBancaria().getDescricao());
+        public double transferir (Double valor, Double saldo, TipoConta tipoConta, InstituicaoBancaria bancoRemetente,
+                ContaBancaria contaDestinatario){
+            double taxa = 1;
+            boolean mesmoBanco = bancoRemetente.getDescricao().equals(contaDestinatario.getInstituicaoBancaria().getDescricao());
 
-        if (tipoConta.equals(TipoConta.CONTA_CORRENTE) && (mesmoBanco == false)){
-            taxa = 1.01;
-        }
-        if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && (mesmoBanco)){
-            taxa = 1.005;
-        }
-        if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && (mesmoBanco == false)){
-            taxa = 1.01;
-        }
-        if ((valor * taxa) >= saldo) {
-            throw new SaldoInsuficienteException("Saldo Insuficiente");
-        } else {
-            saldo = saldo - valor;
-            contaDestinatario.depositar(valor);
-        }
+            if (tipoConta.equals(TipoConta.CONTA_CORRENTE) && (!mesmoBanco)) {
+                taxa = 1.01;
+            }
+            if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && (mesmoBanco)) {
+                taxa = 1.005;
+            }
+            if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && (!mesmoBanco)) {
+                taxa = 1.01;
+            }
+            if ((valor * taxa) >= saldo) {
+                throw new SaldoInsuficienteException("Saldo Insuficiente");
+            } else {
+                saldo = saldo - valor * taxa;
+                contaDestinatario.depositar(valor);
+            }
 
-        return saldo;
-    }
-
+            return saldo;
+        }
 
 
 }
