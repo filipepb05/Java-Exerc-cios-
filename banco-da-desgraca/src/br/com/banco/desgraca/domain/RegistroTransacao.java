@@ -9,14 +9,16 @@ public class RegistroTransacao {
     private List<Transacao> listaTransacoes;
 
     public RegistroTransacao() {
+
         listaTransacoes = new ArrayList<>();
     }
 
     public void registrarTransacao(Transacao transacao) {
+
         listaTransacoes.add(transacao);
     }
 
-    public List<String> listaExtrato(LocalDate inicio, LocalDate fim) {
+    public List<String> listaExtrato (LocalDate inicio, LocalDate fim) {
 
         List<String> listaExtrato = new ArrayList<>();
 

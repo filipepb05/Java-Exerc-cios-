@@ -16,7 +16,7 @@ public abstract class ContaTransacoes {
         if (tipoConta.equals(TipoConta.CONTA_POUPANCA)) {
             taxa = 1.02;
         }
-        if ((valor * taxa) >= saldo) {
+        if ((valor * taxa) > saldo) {
             throw new SaldoInsuficienteException("Saldo Insuficiente");
         }
         if (tipoConta.equals(TipoConta.CONTA_CORRENTE)) {
@@ -58,7 +58,7 @@ public abstract class ContaTransacoes {
             if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && (!mesmoBanco)) {
                 taxa = 1.01;
             }
-            if ((valor * taxa) >= saldo) {
+            if ((valor * taxa) > saldo) {
                 throw new SaldoInsuficienteException("Saldo Insuficiente");
             } else {
                 saldo = saldo - valor * taxa;
