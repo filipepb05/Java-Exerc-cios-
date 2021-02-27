@@ -49,13 +49,13 @@ public abstract class ContaTransacoes {
             double taxa = 1;
             boolean mesmoBanco = bancoRemetente.getDescricao().equals(contaDestinatario.getInstituicaoBancaria().getDescricao());
 
-            if (tipoConta.equals(TipoConta.CONTA_CORRENTE) && (!mesmoBanco)) {
+            if (tipoConta.equals(TipoConta.CONTA_CORRENTE) && mesmoBanco == false) {
                 taxa = 1.01;
             }
-            if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && (mesmoBanco)) {
+            if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && mesmoBanco)  {
                 taxa = 1.005;
             }
-            if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && (!mesmoBanco)) {
+            if (tipoConta.equals(TipoConta.CONTA_POUPANCA) && mesmoBanco == false)  {
                 taxa = 1.01;
             }
             if ((valor * taxa) > saldo) {

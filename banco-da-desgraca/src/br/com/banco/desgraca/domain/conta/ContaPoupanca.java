@@ -42,7 +42,7 @@ public class ContaPoupanca extends ContaTransacoes implements ContaBancaria {
     @Override
     public Double consultarSaldo() {
         System.out.println("Saldo " + informacaoConta + " " +DecimalFormat.getCurrencyInstance().format(saldo));
-        return null;
+        return saldo;
     }
 
     @Override
