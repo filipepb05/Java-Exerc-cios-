@@ -1,10 +1,12 @@
+import java.time.LocalDate;
+
 public class Diretor extends Pessoa {
 
     private int numeroFilme;
 
 
-    public Diretor(String nome, int idade, Genero genero, int numeroFilme) {
-        super (nome, idade, genero);
+    public Diretor(String nome, LocalDate anoNascimento, Genero genero, int numeroFilme) {
+        super (nome, anoNascimento, genero);
         this.numeroFilme = numeroFilme;
     }
 

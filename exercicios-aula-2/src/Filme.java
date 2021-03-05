@@ -7,10 +7,10 @@ public class Filme {
     private double duracao;
     private int anoLancamento;
     private int nota;
-    private Pessoa diretor;
+    private Diretor diretor;
     private List<Pessoa> elenco;
 
-    public Filme(String filme, String descricao, double duracao, int anoLancamento, Pessoa batata, List<Pessoa> elenco, int nota) {
+    public Filme(String filme, String descricao, double duracao, int anoLancamento, Diretor batata, List<Pessoa> elenco, int nota) {
         defineNota(nota);
         this.filme = filme;
         this.descricao = descricao;

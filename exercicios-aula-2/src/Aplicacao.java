@@ -1,3 +1,4 @@
+import java.time.LocalDate;
 import java.util.ArrayList;
 import java.util.List;
 
@@ -8,11 +9,11 @@ public class Aplicacao {
         List<Pessoa> elencoBatman;
         List<Pessoa> elencoResgate;
 
-        Pessoa spielberg = new Diretor ("Spielberg", 65, Genero.MASCULINO, 55);
-        Pessoa schumacher = new Diretor ("Joel Schumacher", 60, Genero.MASCULINO, 3);
-        Pessoa hanks = new Ator ("Tom Hanks", 55, Genero.MASCULINO, 10);
-        Pessoa arnold = new Ator ("Arnold Schwarzenegger", 68, Genero.MASCULINO, 500);
-        Pessoa clooney = new Ator ("George Clooney", 50, Genero.MASCULINO, 0);
+        Diretor spielberg = new Diretor ("Spielberg", LocalDate.of(1950, 1, 12), Genero.MASCULINO, 55);
+        Diretor schumacher = new Diretor ("Joel Schumacher", LocalDate.of(1939, 6, 15), Genero.MASCULINO, 3);
+        Ator hanks = new Ator ("Tom Hanks", LocalDate.of(1962, 8, 12), Genero.MASCULINO, 10);
+        Ator arnold = new Ator ("Arnold Schwarzenegger", LocalDate.of(1978, 3, 30), Genero.MASCULINO, 500);
+        Ator clooney = new Ator ("George Clooney", LocalDate.of(1975, 12, 1), Genero.MASCULINO, 0);
 
         elencoBatman = new ArrayList<>();
         elencoResgate = new ArrayList<>();
@@ -23,7 +24,7 @@ public class Aplicacao {
         elencoResgate.add(hanks);
 
         Filme batman = new Filme ("Batman","Universo DC", 135, 2012, schumacher,
-                elencoBatman , 3);
+                elencoBatman, 10);
         Filme resgate = new Filme ("O Resgate do soldado Ryan", "Guerra - WW2", 172,
                 2001, spielberg, elencoResgate, 5);
 
